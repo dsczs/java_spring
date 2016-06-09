@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+  <bean name="helloworld" class="com.dsczs.spring.beans.HelloWorld">
+      <property name="name" value="zhanggang"></property>
+  </bean>
+  
+  <bean id="car" class="com.dsczs.spring.beans.Car">
+      <constructor-arg value="Audi" index="0"></constructor-arg>
+      <constructor-arg type="java.lang.String">
+          <value><![CDATA[<shanghai>]]></value>
+      </constructor-arg>
+      <constructor-arg value="250"></constructor-arg>
+  </bean>
+  
+  <bean id="person" class="com.dsczs.spring.beans.Person">
+      <property name="name" value="tom"></property>
+      <property name="age" value="24"></property>
+      <property name="car" ref="car"></property>
+  </bean>
+</beans>
